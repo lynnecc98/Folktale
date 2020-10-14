@@ -536,7 +536,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 650835351}
   m_LocalRotation: {x: -0.005339342, y: 0.869013, z: 0.009379876, w: 0.49467152}
-  m_LocalPosition: {x: -62.3, y: 3.7999983, z: 381.4}
+  m_LocalPosition: {x: -49.54, y: 5.74, z: 377.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7130,7 +7130,7 @@ Skybox:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1941572887}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CustomSkybox: {fileID: 2100000, guid: 0b3286a07ef534dee98c67ba169ce9dd, type: 2}
 --- !u!114 &1941572892
 MonoBehaviour:
