@@ -34,6 +34,7 @@ public class SequenceController : MonoBehaviour
     private float waterRiseStartTime;
     private float graveStartTime;
     private float rainStartTime;
+    private float changeDirectionTime;
 
     private bool isAnimating = false;
 
@@ -47,7 +48,7 @@ public class SequenceController : MonoBehaviour
         grave = GameObject.Find("Grave");
 
         cloudEndPosition = clouds.gameObject.transform.position;
-        
+
         //Animation anim = water.GetComponent<Animation>();
 
         clouds.gameObject.transform.position = cloudStartPosition;
@@ -68,6 +69,7 @@ public class SequenceController : MonoBehaviour
     void Update()
     {
         if (!isAnimating) return;
+
         float distCovered = (Time.time - startTime) * cloudSpeed;
         float rainIntensity = ((Time.time - rainStartTime) * (cloudSpeed / 2)) / cloudJourneyLength;
 
@@ -75,13 +77,21 @@ public class SequenceController : MonoBehaviour
         float gravePositionFraction = ((Time.time - graveStartTime) * (cloudSpeed)) / cloudJourneyLength;
 
         float fractionOfJourney = distCovered / cloudJourneyLength;
+        //float reverseFractionOfJourney = distCovered / cloudJourneyLength;
 
+        if(Time.time < changeDirectionTime)
+        {
+            rainScript.RainIntensity = Mathf.Max(rainIntensity, 0);
+            clouds.gameObject.transform.position = Vector3.Lerp(cloudStartPosition, cloudEndPosition, fractionOfJourney);
+            water.gameObject.transform.position = Vector3.Lerp(waterStartPosition, waterEndPosition, Mathf.Max(waterPositionFraction, 0));
+            mainCamera.gameObject.transform.position = Vector3.Lerp(cameraStartPosition, cameraEndPosition, Mathf.Max(fractionOfJourney, 0));
+            grave.transform.position = Vector3.Lerp(graveStartPosition, graveEndPosition, Mathf.Max(gravePositionFraction, 0));
+        } else
+        {
+            water.gameObject.transform.position = Vector3.Lerp(waterStartPosition, waterEndPosition, Mathf.Max(waterPositionFraction, 0));
 
-        rainScript.RainIntensity = Mathf.Max(rainIntensity, 0);
-        clouds.gameObject.transform.position = Vector3.Lerp(cloudStartPosition, cloudEndPosition, fractionOfJourney);
-        water.gameObject.transform.position = Vector3.Lerp(waterStartPosition, waterEndPosition, Mathf.Max(waterPositionFraction, 0));
-        mainCamera.gameObject.transform.position = Vector3.Lerp(cameraStartPosition, cameraEndPosition, Mathf.Max(fractionOfJourney, 0));
-        grave.transform.position = Vector3.Lerp(graveStartPosition, graveEndPosition, Mathf.Max(gravePositionFraction, 0));
+        }
+
     }
 
     public void StartSequence()
@@ -92,10 +102,11 @@ public class SequenceController : MonoBehaviour
         graveStartTime = startTime + 60;
         waterRiseStartTime = startTime + 20;
 
+        changeDirectionTime = startTime + 90;
+
         cloudJourneyLength = Vector3.Distance(cloudStartPosition, cloudEndPosition);
         waterJourneyLength = Vector3.Distance(waterStartPosition, waterEndPosition);
         isAnimating = true;
-
     }
 
 }
