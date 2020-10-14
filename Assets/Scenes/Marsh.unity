@@ -14,31 +14,31 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 0
+  m_Fog: 1
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 0.52674437, g: 0.6310372, b: 0.8396226, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientIntensity: 0
+  m_AmbientMode: 1
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
-  m_HaloStrength: 0.5
-  m_FlareStrength: 1
+  m_SkyboxMaterial: {fileID: 2100000, guid: 18a18be315858d64c9a8ce50ccd52e64, type: 2}
+  m_HaloStrength: 0.295
+  m_FlareStrength: 0.283
   m_FlareFadeSpeed: 3
   m_HaloTexture: {fileID: 0}
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
   m_DefaultReflectionMode: 0
   m_DefaultReflectionResolution: 128
   m_ReflectionBounces: 1
-  m_ReflectionIntensity: 1
+  m_ReflectionIntensity: 0.65
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 0.65}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -48,7 +48,7 @@ LightmapSettings:
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
-    m_IndirectOutputScale: 1
+    m_IndirectOutputScale: 0
     m_AlbedoBoost: 1
     m_EnvironmentLightingMode: 0
     m_EnableBakedLightmaps: 1
@@ -60,8 +60,8 @@ LightmapSettings:
     m_AtlasSize: 1024
     m_AO: 0
     m_AOMaxDistance: 1
-    m_CompAOExponent: 1
-    m_CompAOExponentDirect: 0
+    m_CompAOExponent: 4.21
+    m_CompAOExponentDirect: 8.22
     m_ExtractAmbientOcclusion: 0
     m_Padding: 2
     m_LightmapParameters: {fileID: 0}
@@ -1993,12 +1993,12 @@ Light:
   m_CookieSize: 10
   m_Shadows:
     m_Type: 2
-    m_Resolution: -1
+    m_Resolution: 1
     m_CustomResolution: -1
     m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_Bias: 0
+    m_NormalBias: 0.95
+    m_NearPlane: 0.1
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -2042,13 +2042,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1275594326}
-  m_LocalRotation: {x: 0.35856172, y: 0.085902415, z: 0.29044494, w: 0.883004}
+  m_LocalRotation: {x: 0.6001841, y: 0.4742067, z: -0.13910231, w: 0.62893385}
   m_LocalPosition: {x: 12.26, y: 51.42, z: 340.56}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 35.685, y: 26.309002, z: 45.019}
+  m_LocalEulerAnglesHint: {x: 62.484, y: 111.615005, z: 58.578003}
 --- !u!1 &1286587987
 GameObject:
   m_ObjectHideFlags: 0
@@ -4000,17 +4000,17 @@ PrefabInstance:
     - target: {fileID: 4556870034385625565, guid: 85c0a17cb59c1814aa0c13c6a6662565,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -98.8
+      value: -103.43
       objectReference: {fileID: 0}
     - target: {fileID: 4556870034385625565, guid: 85c0a17cb59c1814aa0c13c6a6662565,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 11.07
+      value: 10.49
       objectReference: {fileID: 0}
     - target: {fileID: 4556870034385625565, guid: 85c0a17cb59c1814aa0c13c6a6662565,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 395.3
+      value: 395.52
       objectReference: {fileID: 0}
     - target: {fileID: 4556870034385625565, guid: 85c0a17cb59c1814aa0c13c6a6662565,
         type: 3}
@@ -4051,6 +4051,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4556870034385625565, guid: 85c0a17cb59c1814aa0c13c6a6662565,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4556870034385625565, guid: 85c0a17cb59c1814aa0c13c6a6662565,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4556870034385625565, guid: 85c0a17cb59c1814aa0c13c6a6662565,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.4
       objectReference: {fileID: 0}
     - target: {fileID: 4556870034394943039, guid: 85c0a17cb59c1814aa0c13c6a6662565,
         type: 3}
