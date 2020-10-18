@@ -43,10 +43,10 @@ MonoBehaviour:
   active: 1
   enabled:
     overrideState: 1
-    value: 1
+    value: 0
   filtering:
     overrideState: 1
-    value: {x: 38.807575, y: 83.80754}
+    value: {x: 38.807575, y: 88.183624}
   minLuminance:
     overrideState: 1
     value: -0.6
@@ -1475,7 +1475,7 @@ MonoBehaviour:
     value: 1
   roundness:
     overrideState: 1
-    value: 0.726
+    value: 0.62
   rounded:
     overrideState: 0
     value: 0

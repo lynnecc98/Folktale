@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/PromiseMe.unity
+    guid: 9975f4943401642a6b4626732aec1070
+  - enabled: 1
+    path: Assets/Scenes/Burial.unity
+    guid: 693368930467345e2827918208412a05
+  - enabled: 1
+    path: Assets/Scenes/LeftOrRight.unity
+    guid: b3499123f924f498897e5ea07f4dd46e
   m_configObjects: {}
