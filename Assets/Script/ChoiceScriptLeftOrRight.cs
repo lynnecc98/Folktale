@@ -11,6 +11,7 @@ public class ChoiceScriptLeftOrRight : MonoBehaviour
     public GameObject TextBox;
     public GameObject ChoiceA;
     public GameObject ChoiceB;
+    public GameObject Mom;
 
     public string choice1Response;
     public string choice2Response;
@@ -18,16 +19,18 @@ public class ChoiceScriptLeftOrRight : MonoBehaviour
     public GameObject FadeOutTimeline;
 
     public int ChoiceMade;
+    private Animator m_Animator;
 
     private void Start()
     {
-       
+        m_Animator = Mom.GetComponent<Animator>();
     }
 
     public void ChoiceOption1()
     {
         TextBox.GetComponent<TMP_Text>().text = choice1Response;
         ChoiceMade = 1;
+        m_Animator.CrossFade("Yelling", 0.1F);
         StartCoroutine(LoadYourAsyncScene());
     }
 
@@ -35,6 +38,7 @@ public class ChoiceScriptLeftOrRight : MonoBehaviour
     {
         TextBox.GetComponent<TMP_Text>().text = choice2Response;
         ChoiceMade = 2;
+        m_Animator.CrossFade("Yelling", 0.1F);
         StartCoroutine(LoadYourAsyncScene());
     }
 

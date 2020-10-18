@@ -900,6 +900,7 @@ MonoBehaviour:
   TextBox: {fileID: 994317190}
   ChoiceA: {fileID: 1767663306}
   ChoiceB: {fileID: 1886780079}
+  Mom: {fileID: 405776045}
   choice1Response: You went right! Opposites again...
   choice2Response: That's my right! Opposites again...
   FadeOutTimeline: {fileID: 1687917597}
@@ -3000,7 +3001,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 9a8e244c116c2b3408a32819f2d27a45, type: 2}
+      objectReference: {fileID: 9100000, guid: 5ddc602d9f4f74eecb20d647b162ac6a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85c0a17cb59c1814aa0c13c6a6662565, type: 3}
 --- !u!1 &2095872532
