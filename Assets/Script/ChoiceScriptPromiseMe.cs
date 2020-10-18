@@ -12,6 +12,7 @@ public class ChoiceScriptPromiseMe : MonoBehaviour
     //public GameObject ChoiceA;
     //public GameObject ChoiceB;
     public GameObject FadeOutTimeline;
+    public GameObject Mom;
 
     public GameObject ResponseButton1;
     public GameObject ResponseButton2;
@@ -23,11 +24,12 @@ public class ChoiceScriptPromiseMe : MonoBehaviour
     //public string choice2Response;
 
     public int ChoiceMade;
+    private Animator m_Animator;
 
     private void Start()
     {
         ResponseButton2.SetActive(false);
-        FadeOutTimeline.SetActive(false);
+        m_Animator = Mom.GetComponent<Animator>();
 
     }
 
@@ -36,6 +38,7 @@ public class ChoiceScriptPromiseMe : MonoBehaviour
         TextBox.GetComponent<TMP_Text>().text = response1;
         ResponseButton1.SetActive(false);
         ResponseButton2.SetActive(true);
+        m_Animator.CrossFade("LayingNodding", 0.3F);
 
         ResponseButton2.GetComponent<UnityEngine.Playables.PlayableDirector>().Play();
     }
@@ -46,6 +49,7 @@ public class ChoiceScriptPromiseMe : MonoBehaviour
         //ResponseButton1.SetActive(false);
         ResponseButton2.SetActive(false);
         FadeOutTimeline.SetActive(true);
+
         //FadeOutTimeline.GetComponent<UnityEngine.Playables.PlayableDirector>().Play();
         StartCoroutine(LoadYourAsyncScene());
     }
