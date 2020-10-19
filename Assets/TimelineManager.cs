@@ -9,6 +9,7 @@ public class TimelineManager : MonoBehaviour
 {
     public PlayableDirector Timeline1;
     public PlayableDirector Timeline2;
+    public GameObject FadeOut;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +26,10 @@ public class TimelineManager : MonoBehaviour
                 Timeline1.Stop();
                 Timeline2.Play();
             }
+        }
+        if (Timeline2.time > 8.5) 
+        {
+            FadeOut.SetActive(true);
         }
     }
 
