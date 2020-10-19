@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LeftOrRight.unity
     guid: b3499123f924f498897e5ea07f4dd46e
+  - enabled: 1
+    path: Assets/Scenes/HurryUp.unity
+    guid: a3d15a6427c97c442bf793b6ae901144
+  - enabled: 1
+    path: Assets/Scenes/BeQuiet.unity
+    guid: e3df7861f2f435e4aa5d7cfd195e60a6
   m_configObjects: {}
