@@ -59,7 +59,7 @@ public class ChoiceScriptLeftOrRight : MonoBehaviour
 
         yield return new WaitForSeconds(3);
 
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("PromiseMe");
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("BeQuiet");
 
         // Wait until the asynchronous scene fully loads
         while (!asyncLoad.isDone)

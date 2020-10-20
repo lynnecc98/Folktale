@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
+using UnityEngine.SceneManagement;
 using UnityEngine.Timeline;
 
 public class TimelineManager : MonoBehaviour
@@ -30,8 +31,18 @@ public class TimelineManager : MonoBehaviour
         if (Timeline2.time > 8.5) 
         {
             FadeOut.SetActive(true);
+            StartCoroutine(LoadNextScene());
         }
     }
-
+    IEnumerator LoadNextScene()
+    {
+        CrossSceneData.StartWithIntroSequence = false;
+        yield return new WaitForSeconds(3);
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("LeftOrRight");
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
+    }
 
 }

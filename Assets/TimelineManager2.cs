@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.Playables;
+using UnityEngine.SceneManagement;
 using UnityEngine.Timeline;
 
 public class TimelineManager2 : MonoBehaviour
@@ -46,6 +47,18 @@ public class TimelineManager2 : MonoBehaviour
         if (Timeline2.time > 6)
         {
             FadeOut.SetActive(true);
+            StartCoroutine(LoadNextScene());
+        }
+    }
+
+    IEnumerator LoadNextScene()
+    {
+        CrossSceneData.StartWithIntroSequence = false;
+        yield return new WaitForSeconds(3);
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("PromiseMe");
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
         }
     }
 
