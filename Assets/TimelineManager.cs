@@ -38,7 +38,7 @@ public class TimelineManager : MonoBehaviour
     {
         CrossSceneData.StartWithIntroSequence = false;
         yield return new WaitForSeconds(3);
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("LeftOrRight");
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("BeQuiet");
         while (!asyncLoad.isDone)
         {
             yield return null;
