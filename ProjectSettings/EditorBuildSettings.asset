@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Burial.unity
+    guid: 693368930467345e2827918208412a05
+  - enabled: 1
     path: Assets/Scenes/HurryUp.unity
     guid: a3d15a6427c97c442bf793b6ae901144
   - enabled: 1
@@ -17,7 +20,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PromiseMe.unity
     guid: 9975f4943401642a6b4626732aec1070
-  - enabled: 1
-    path: Assets/Scenes/Burial.unity
-    guid: 693368930467345e2827918208412a05
   m_configObjects: {}
