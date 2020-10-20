@@ -14,11 +14,10 @@ public class TimelineManager2 : MonoBehaviour
     public GameObject FadeOut;
     public Animator son;
     bool paused = false;
-
     // Start is called before the first frame update
     void Start()
     {
-
+        Cursor.visible = true;
     }
 
     // Update is called once per frame
@@ -34,11 +33,7 @@ public class TimelineManager2 : MonoBehaviour
             }
             
         }
-        if (paused == true && Input.GetKeyDown("space")) 
-        {
-            Timeline1.Resume();
-            son.SetBool("isWalking", true);
-        }
+        
         if (Timeline1.time > 12.1) 
         {
             Timeline1.Stop();
@@ -59,6 +54,15 @@ public class TimelineManager2 : MonoBehaviour
         while (!asyncLoad.isDone)
         {
             yield return null;
+        }
+    }
+
+    public void SelectedChoice() 
+    {
+        if (paused == true)
+        {
+            Timeline1.Resume();
+            son.SetBool("isWalking", true);
         }
     }
 
