@@ -13,6 +13,7 @@ public class ChoiceScriptPromiseMe : MonoBehaviour
     public GameObject Mom;
     public GameObject ResponseButton1;
     public GameObject ResponseButton2;
+    public GameObject FinalButtonCanvas;
 
     public string response1;
 
@@ -22,7 +23,7 @@ public class ChoiceScriptPromiseMe : MonoBehaviour
     {
         ResponseButton2.SetActive(false);
         m_Animator = Mom.GetComponent<Animator>();
-
+        FinalButtonCanvas.SetActive(false);
     }
 
     public void Response1()
@@ -39,14 +40,23 @@ public class ChoiceScriptPromiseMe : MonoBehaviour
     {
         ResponseButton2.SetActive(false);
         FadeOutTimeline.SetActive(true);
+        StartCoroutine(ShowButtons());
+    }
 
+    IEnumerator ShowButtons ()
+    {
+        yield return new WaitForSeconds(3);
+        FinalButtonCanvas.SetActive(true);
+    }
+
+    public void FinalButtonClick()
+    {
         StartCoroutine(LoadNextScene());
     }
 
     IEnumerator LoadNextScene()
     {
         CrossSceneData.StartWithIntroSequence = false;
-        yield return new WaitForSeconds(3);
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Burial");
         while (!asyncLoad.isDone)
         {

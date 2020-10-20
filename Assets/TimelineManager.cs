@@ -10,31 +10,48 @@ public class TimelineManager : MonoBehaviour
 {
     public PlayableDirector Timeline1;
     public PlayableDirector Timeline2;
+    public PlayableDirector Timeline3;
+    public GameObject StayPutSpeechBubble;
     public GameObject FadeOut;
+    public GameObject ButtonCanvas;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
+        StayPutSpeechBubble.SetActive(false);
+        ButtonCanvas.SetActive(false);
+    }
+    public void FollowClick()
+    {
+        ButtonCanvas.SetActive(false);
+        Timeline1.Stop();
+        Timeline2.Play();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void StayClick()
     {
-        if (Timeline1.time > 6.5) 
-        {
-            if (Input.GetKeyDown("space")) {
-                Timeline1.Stop();
-                Timeline2.Play();
-            }
-        }
-        if (Timeline2.time > 8.5) 
-        {
-            FadeOut.SetActive(true);
-            StartCoroutine(LoadNextScene());
-        }
+        StayPutSpeechBubble.SetActive(true);
+        ButtonCanvas.SetActive(false);
+        StartCoroutine(LoadNextSceneWithDelay());
     }
-    IEnumerator LoadNextScene()
+
+    public void ShowButtonCanvas()
+    {
+        ButtonCanvas.SetActive(true);
+    }
+
+    public void LoadNextScene()
+    {
+        FadeOut.SetActive(true);
+        StartCoroutine(LoadNextSceneAsync());
+    }
+
+    IEnumerator LoadNextSceneWithDelay()
+    {
+        yield return new WaitForSeconds(3);
+        LoadNextScene();
+    }
+
+    IEnumerator LoadNextSceneAsync()
     {
         CrossSceneData.StartWithIntroSequence = false;
         yield return new WaitForSeconds(3);
