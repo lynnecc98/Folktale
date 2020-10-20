@@ -866,7 +866,6 @@ MonoBehaviour:
   ResponseButton1: {fileID: 1767663306}
   ResponseButton2: {fileID: 2068349599}
   response1: You must promise me.
-  ChoiceMade: 0
 --- !u!1 &994317190
 GameObject:
   m_ObjectHideFlags: 0
